@@ -13,8 +13,40 @@
 </head>
 
 <body>
-    
+    <!--JUMBOTRON-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Sweet-16 Project</h1>
+          <p class="lead">A search tool to help you decide what to cook with your leftover groceries.</p>
+        </div>
+    </div>
 
+    <!--Main Body-->
+    <div class="container">
+        <!--Search Bar Row-->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                        <input id="userInput" type="text" class="form-control" placeholder="Milk, eggs, chicken, tomato" aria-label="ingredients" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="searchButton" class="btn btn-outline-secondary" type="button">Search!</button>
+                        </div>
+                      </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <hr/>
+
+        <!--Results Div-->
+        <div id="searchResults"></div>
+
+
+
+
+
+    </div>
 
 
 
