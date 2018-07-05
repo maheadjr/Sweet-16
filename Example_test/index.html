@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Colorlib Listed Directory Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header role="banner">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Food Recipes Search</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+          <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#">Blog</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/Wallpapers_1920x1200.jpg);">
+    <div class="container">
+      <div class="row align-items-center site-hero-inner justify-content-center">
+        <div class="col-md-8 text-center">
+
+          <div class="mb-5 element-animate">
+            <h1>Find your perfect Food Recipes.</h1>
+            <p>Discover &amp; connect with great Recipes around the world.</p>
+          </div>
+
+          <form class="form-inline element-animate" id="search-form">
+            <label for="s" class="sr-only">Location</label>
+            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="Search Any Food You Like"
+              onFocus="geolocate()">
+            <button type="submit" class="btn btn-primary" id="submit">Search</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END section -->
+  <section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Search Reuslt:</p>
+          <div id="showAPI" class="imgformate"></div>
+        </div>
+        <div class="col-md-6">
+          <p>The result video:</p>
+          <div id="showVide" class="imgformate"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- END section -->
+<!--
+  <section class="feature-destination">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 element-animate ">
+          <a href="#" class="img-bg" style="background-image: url('https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>Sticky Chinese Chicken, China</h2>
+              <p>Visit The Website</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 element-animate ">
+          <a href="#" class="img-bg" style="background-image: url('http://cheeseburgerbobbys.com/wp-content/uploads/Our-Menu-Burger1.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>CheeseBurger, USA</h2>
+              <p>Visit This Website</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 element-animate ">
+          <a href="#" class="img-bg last" style="background-image: url('https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/kfms-beef-bibimbap-sml.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>Bibimbap,Korean </h2>
+              <p>Visit This Website</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+  <!-- END section -->
+
+<!--
+
+  <section class="site-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <h2>Top Food Recipes</h2>
+          <p>Let us make something good at home.</p>
+        </div>
+      </div>
+      <div class="row top-destination">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/3228/chilli-con-carne" class="place">
+            <img src="images/Chilli_con_carne.jpg" alt="Image placeholder">
+            <h2>Chilli con carne recipe</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/2089/spiced-carrot-and-lentil-soup" class="place">
+            <img src="images/Spiced_carrot_and_lentil_soip.jpg" alt="Image placeholder">
+            <h2>Spiced carrot and lentil soup</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/4814/mustardstuffed-chicken" class="place">
+            <img src="images/Mustard-stuffed-chicken.jpg" alt="Image placeholder">
+            <h2>Mustard-stuffed chicken</h2>
+            <p>Visit This Websit</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/5605/falafel-burgers" class="place">
+            <img src="images/Falafel-burgers.jpg" alt="Image placeholder">
+            <h2>Falafel burgers</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/9100/onepot-chicken-chasseur" class="place">
+            <img src="images/One-pot-chicken-chasseur.jpg" alt="Image placeholder">
+            <h2>One-pot chicken chasseur</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/1521/summerinwinter-chicken" class="place">
+            <img src="images/Summer-in-winter-chicken.jpg" alt="Image placeholder">
+            <h2>Summer-in-winter chicken</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  -->
+  <!-- END section -->
+<!--
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <h3 class="mb-4">About</h3>
+          <p class="mb-4">Learn More How to Cook!</p>
+        </div>
+        <div class="col-md-2">
+          <h3 class="mb-4">Links</h3>
+          <ul class="list-unstyled ">
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Destination</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Connect</h3>
+          <p>
+            <a href="#" class="p-2">
+              <span class="fa fa-facebook"></span>
+            </a>
+            <a href="#" class="p-2">
+              <span class="fa fa-twitter"></span>
+            </a>
+            <a href="#" class="p-2">
+              <span class="fa fa-instagram"></span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  -->
+  <!-- END footer -->
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" />
+    </svg>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.0.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
