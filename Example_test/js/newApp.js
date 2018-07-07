@@ -83,7 +83,6 @@ $("#submit").on("click", function (event) {
 
 
     });
-   
 
 
     setTimeout(function() {
@@ -92,7 +91,8 @@ $("#submit").on("click", function (event) {
         $(".recipeName").each(function(index, element){
             console.log("===============================");
             // console.log(index);
-            var searchName = $(this).text().replace(" ","+");;
+            var searchName = $(this).text();
+            searchName = v.replaceAll(searchName, " ", "+");
             console.log(searchName);
     
             var queryURL =
