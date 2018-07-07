@@ -30,6 +30,7 @@ $("#submit").on("click", function (event) {
 
         console.log(response);
 
+
         for (var i = 0; i < 5; i++) {
             // $("#showAPI").text(response.recipes[i].title);
 
@@ -43,14 +44,31 @@ $("#submit").on("click", function (event) {
 
             console.log(response.recipes[i].image_url);
 
+           // var f2flink= $("div.data").attr("href", response.recipes[i].f2f_url);
+            // response.recipes[i].f2f_url;
+          //  var newDiv = $("<div>");
+        //     var f2flink= $("<a>");
+        //    var title= f2flink.attr({href:response.recipes[i].f2f_url})
+            var newAnchor =  $("<a>");
 
-            var newDiv = $("<div>");
-            newDiv.attr({
-                data: response.recipes[i].title,
-                id: "recipes" + i
+            newAnchor.attr({
+                href:response.recipes[i].f2f_url,
+                target:"_blank",
+                title:response.recipes[i].title
 
             }).text(response.recipes[i].title);
 
+            var newDiv = $("<div>");
+            newDiv.attr({
+             
+                data: response.recipes[i].title,
+                id: "recipes" + i
+            //    title:response.recipes[i].f2f_url,
+               
+            
+            }).html(newAnchor);
+          
+         
             $("#showAPI").append(newDiv, newImg);
 
 
@@ -94,9 +112,9 @@ $("#submit").on("click", function (event) {
                        var imgUrl = item.snippet.thumbnails.default.url;
                        var videID = response.items[k].id.videoId;
         
-                       var newFrame = $("<iframe>");
+                       var newFrame = $("<object>");
                        newFrame.attr({
-                           src: "https://www.youtube.com/v/" + videID,
+                           src: "https://www.youtube.com/embed/" + videID,
                            frameborder: "0",
                            height: "300",
                            width: "450",
