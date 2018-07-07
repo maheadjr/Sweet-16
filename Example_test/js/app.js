@@ -3,6 +3,8 @@ var videoArray = [];
 var url = "";
 var test="";
 
+
+
 $("#submit").on("click", function (event) {
 
    $("#showAPI").empty();
@@ -16,7 +18,7 @@ $("#submit").on("click", function (event) {
 
     event.preventDefault();
     input = $("#userInput").val().trim();
-    console.log(input);
+    // console.log(input);
 
    
 
@@ -28,7 +30,7 @@ $("#submit").on("click", function (event) {
 
         response = JSON.parse(response);
 
-        console.log(response);
+        // console.log(response);
 
 
         for (var i = 0; i < 5; i++) {
@@ -42,7 +44,7 @@ $("#submit").on("click", function (event) {
                 width: "350",
             });
 
-            console.log(response.recipes[i].image_url);
+            // console.log(response.recipes[i].image_url);
 
            // var f2flink= $("div.data").attr("href", response.recipes[i].f2f_url);
             // response.recipes[i].f2f_url;
@@ -60,6 +62,7 @@ $("#submit").on("click", function (event) {
 
             var newDiv = $("<div>");
             newDiv.attr({
+<<
              
                 data: response.recipes[i].title,
                 id: "recipes" + i
@@ -69,29 +72,50 @@ $("#submit").on("click", function (event) {
             }).html(newAnchor);
           
          
+==
+                "data-name": response.recipes[i].title,
+                id: "recipes" + i,
+                class: "recipeName",
+            }).text(response.recipes[i].title);
+
+>>
             $("#showAPI").append(newDiv, newImg);
 
 
-             test = $("#recipes"+i).attr("data");
+             test = $("#recipes"+i).attr("data-name");
          //    console.log(test.length);
             for(var j=0 ; j< test.length ; j++){
              test = test.replace(" ","+");
             }
             videoArray.push(test);
+            // console.log(videoArray);
          
          // console.log("this is a vidoe Array;",videoArray);
 
-            
+
+        }
+
+       
+
         
 
-            url =
+
+    });
+   
+    setTimeout(function() {
+        $(".recipeName").each(function(index, element){
+            console.log("===============================");
+            console.log(index)
+            var searchName = $(this).text().replace(" ","+");;
+            console.log(searchName);
+    
+            var queryURL =
             "https://www.googleapis.com/youtube/v3/search" +
-         //    "?id=7lCDEYXw3mM" +
             "?key=AIzaSyAa5bkvvpgp54UKa9W_Tf5OIgoB9HT1l5E" +
             "&part=snippet" +
-            "&q=how+to+make+" + videoArray[i] +
+            "&q=how+to+make+" + searchName +
             "&type=video" +
-            "&maxResults=3"+
+            "&maxResults=1"+
             "&order=relevance" +
             "&videoCaption=closedCaption";
         
@@ -141,5 +165,31 @@ $("#submit").on("click", function (event) {
     });
    
 
+    
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+    
+            }).then(function(response){
+                var videoID = response.items[0].id.videoId;
+                var youtubeURL = "https://www.youtube.com/embed/" + videoID;
+    
+                var newFrame = $("<object>");
+                newFrame.attr({
+                    data: youtubeURL,
+                    frameborder: "0",
+                    height: "300",
+                    width: "450",
+                    class:"resultVideo",
+                });
+    
+                $(".row-" + index).append(newFrame);
+    
+            })
+    
+        })
+    }, 800);
+
+    
 
 });
