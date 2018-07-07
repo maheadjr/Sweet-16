@@ -30,11 +30,11 @@ $("#submit").on("click", function (event) {
 
         response = JSON.parse(response);
 
-        // console.log(response);
+        console.log(response);
 
         for (var i = 0; i < 5; i++) {
             // $("#showAPI").text(response.recipes[i].title);
-
+            console.log(i);
             var newImg = $("<img>");
             newImg.attr({
                 src: response.recipes[i].image_url,
@@ -44,19 +44,26 @@ $("#submit").on("click", function (event) {
             });
 
             // console.log(response.recipes[i].image_url);
-
+            var newAnchor = $("<a>");
+            console.log("new anchor made");
+            newAnchor.attr({
+                href: response.recipes[i].source_url,
+                target: "_blank",
+                title: response.recipes[i].title
+            }).text(response.recipes[i].title);
+            console.log("attributes added");
 
             var newDiv = $("<div>");
             newDiv.attr({
-                "data-name": response.recipes[i].title,
+                dataname: response.recipes[i].title,
                 id: "recipes" + i,
                 class: "recipeName",
-            }).text(response.recipes[i].title);
+            }).append(newAnchor);
 
             $("#showAPI").append(newDiv, newImg);
 
 
-             test = $("#recipes"+i).attr("data-name");
+             test = $("#recipes"+i).attr("dataname");
          //    console.log(test.length);
             for(var j=0 ; j< test.length ; j++){
              test = test.replace(" ","+");
@@ -76,16 +83,20 @@ $("#submit").on("click", function (event) {
 
     });
    
+
+
     setTimeout(function() {
+        console.log("timeout workin");
+
         $(".recipeName").each(function(index, element){
             console.log("===============================");
-            console.log(index)
+            // console.log(index);
             var searchName = $(this).text().replace(" ","+");;
             console.log(searchName);
     
             var queryURL =
             "https://www.googleapis.com/youtube/v3/search" +
-            "?key=AIzaSyAa5bkvvpgp54UKa9W_Tf5OIgoB9HT1l5E" +
+            "?key=AIzaSyD2bbk3Tu1dZCwbsiDrqrv5C0NAZgDWoCI" +
             "&part=snippet" +
             "&q=how+to+make+" + searchName +
             "&type=video" +
@@ -115,7 +126,7 @@ $("#submit").on("click", function (event) {
             })
     
         })
-    }, 800);
+    }, 2000);
 
     
 

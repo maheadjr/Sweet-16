@@ -30,20 +30,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
-          <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link" href="#">Blog</a> -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
 
-        </div>
       </div>
     </nav>
   </header>
@@ -56,12 +43,12 @@
 
           <div class="mb-5 element-animate">
             <h1>Find your perfect Food Recipes.</h1>
-            <p>Discover &amp; connect with great Recipes around the world.</p>
+            <p>Search for recipes that use the ingredients you already have on hand.</p>
           </div>
 
           <form class="form-inline element-animate" id="search-form">
             <label for="s" class="sr-only">Location</label>
-            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="Search Any Food You Like"
+            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="chicken, cheese, tomato, etc."
               onFocus="geolocate()">
             <button type="submit" class="btn btn-primary" id="submit">Search</button>
           </form>
@@ -76,19 +63,38 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <p>Recipe Result:</p>
-          <div id="showAPI" class="imgformate"></div>
+          <h3>Recipe Results:</h3>
         </div>
         <div class="col-md-6">
-          <p>The result video:</p>
-          <div id="showVide" class="imgformate">
+          <h3>Related Videos:</h3>
+          <!-- <div id="showVide" class="imgformate">
             <div class="row row-0"></div>
             <div class="row row-1"></div>
             <div class="row row-2"></div>
             <div class="row row-3"></div>
             <div class="row row-4"></div>
-          </div>
+          </div> -->
         </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+            <div id="showAPI" class="imgformate"></div>
+        </div>
+        
+        <div class="col-md-6">
+            <div id="showVide" class="imgformate">
+                <div class="row row-0"></div>
+                <div class="row row-1"></div>
+                <div class="row row-2"></div>
+                <div class="row row-3"></div>
+                <div class="row row-4"></div>
+             </div>
+        </div>
+
+
       </div>
 
     </div>
