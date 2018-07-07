@@ -41,6 +41,7 @@ $("#submit").on("click", function (event) {
                 id: "img" + i,
                 height: "200",
                 width: "350",
+                class: "imgFood"
             });
 
             // console.log(response.recipes[i].image_url);
