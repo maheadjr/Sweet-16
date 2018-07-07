@@ -32,6 +32,7 @@ $("#submit").on("click", function (event) {
 
         // console.log(response);
 
+
         for (var i = 0; i < 5; i++) {
             // $("#showAPI").text(response.recipes[i].title);
 
@@ -45,14 +46,39 @@ $("#submit").on("click", function (event) {
 
             // console.log(response.recipes[i].image_url);
 
+           // var f2flink= $("div.data").attr("href", response.recipes[i].f2f_url);
+            // response.recipes[i].f2f_url;
+          //  var newDiv = $("<div>");
+        //     var f2flink= $("<a>");
+        //    var title= f2flink.attr({href:response.recipes[i].f2f_url})
+            var newAnchor =  $("<a>");
+
+            newAnchor.attr({
+                href:response.recipes[i].f2f_url,
+                target:"_blank",
+                title:response.recipes[i].title
+
+            }).text(response.recipes[i].title);
 
             var newDiv = $("<div>");
             newDiv.attr({
+<<
+             
+                data: response.recipes[i].title,
+                id: "recipes" + i
+            //    title:response.recipes[i].f2f_url,
+               
+            
+            }).html(newAnchor);
+          
+         
+==
                 "data-name": response.recipes[i].title,
                 id: "recipes" + i,
                 class: "recipeName",
             }).text(response.recipes[i].title);
 
+>>
             $("#showAPI").append(newDiv, newImg);
 
 
@@ -92,6 +118,53 @@ $("#submit").on("click", function (event) {
             "&maxResults=1"+
             "&order=relevance" +
             "&videoCaption=closedCaption";
+        
+             console.log("the query Url", url);
+        
+                 var xhr = new XMLHttpRequest();
+               xhr.open('GET', url);
+               xhr.onload = function () {
+                   // do something
+                   var response = JSON.parse(this.responseText);
+                   console.log("the youtube search:",response);
+        
+        
+                   for (var k = 0; k < response.items.length; k++) {
+                       var item = response.items[k];
+                       var title = item.snippet.title;
+                       var desc = item.snippet.description;
+                       var imgUrl = item.snippet.thumbnails.default.url;
+                       var videID = response.items[k].id.videoId;
+        
+                       var newFrame = $("<object>");
+                       newFrame.attr({
+                           src: "https://www.youtube.com/embed/" + videID,
+                           frameborder: "0",
+                           height: "300",
+                           width: "450",
+                           class:"resultVideo"
+                       });
+        
+                       $("#showVide").append(newFrame);
+        
+        
+        
+                       console.log(title, desc, imgUrl, videID);
+                       console.log("https://www.youtube.com/watch?v=" + videID);
+                   }
+        
+               }
+               xhr.send();
+        
+         // console.log("this is a vidoe Array;",videoArray);
+
+     }
+
+
+
+    });
+   
+
     
             $.ajax({
                 url: queryURL,
