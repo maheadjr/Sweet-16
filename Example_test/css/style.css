@@ -7,6 +7,55 @@ body {
   color: #6c757d;
 }
 
+#pTag{
+
+  /* text-shadow: 3px 2px red; */
+  text-decoration: underline;
+  letter-spacing: 3px;
+
+}
+
+.roundImg{
+  border-radius: 25px;
+  border: 0px solid #73AD21;
+  padding: 5px; 
+  width: 250px;
+  height: 200px;  
+}
+
+.imgTest{
+        		
+  width: 300px;
+  height: 400px;
+}
+
+.tab-panel{
+  
+  display:none;
+}
+
+.tab-panel.active{
+  display:block;
+}
+
+.reSize{
+
+width: 160px;
+height: 146px;
+
+}
+
+.display{
+  display: none;
+}
+
+.forSpace{
+
+  width: 100px;
+  height: 100px;
+
+}
+
 .imgformate{
   
   width: 300px;
@@ -24,19 +73,19 @@ body {
  }
  
  .row-1{
-  margin-top: 25px;
+  margin-top: 35px;
  }
  
  .row-2{
-  margin-top: 25px;
+  margin-top: 40px;
  }
  
  .row-3{
-  margin-top: 25px;
+  margin-top: 40px;
  }
  
  .row-4{
-  margin-top: 25px;
+  margin-top: 40px;
  }
 
 a {

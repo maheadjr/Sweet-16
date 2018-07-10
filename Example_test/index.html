@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <title>Colorlib Listed Directory Template</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Include Cloud Zoom CSS. -->
+  <link rel="stylesheet" type="text/css" href="css/cloudzoom.css">
+
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
   <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-
+  <!-- <link rel="stylesheet" href="css/owl.carousel.min.css"> -->
+  <!-- <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css"> -->
+  <!-- <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css"> -->
   <!-- Theme Style -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -36,7 +39,7 @@
   </header>
   <!-- END header -->
 
-  <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/Wallpapers_1920x1200.jpg);">
+  <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/Wallpapers_1920x1200.jpg);width: 100%; height: 100%;">
     <div class="container">
       <div class="row align-items-center site-hero-inner justify-content-center">
         <div class="col-md-8 text-center">
@@ -48,8 +51,7 @@
 
           <form class="form-inline element-animate" id="search-form">
             <label for="s" class="sr-only">Location</label>
-            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="chicken, cheese, tomato, etc."
-              onFocus="geolocate()">
+            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="chicken, cheese, tomato, etc.">
             <button type="submit" class="btn btn-primary" id="submit">Search</button>
           </form>
 
@@ -58,66 +60,103 @@
     </div>
   </section>
   <!-- END section -->
-  <section>
+  
+  <div class="container">
+    <br>
+    <br>
+    <br>
+  </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h3>Recipe Results:</h3>
-        </div>
-        <div class="col-md-6">
-          <h3>Related Videos:</h3>
-          <!-- <div id="showVide" class="imgformate">
-            <div class="row row-0"></div>
-            <div class="row row-1"></div>
-            <div class="row row-2"></div>
-            <div class="row row-3"></div>
-            <div class="row row-4"></div>
-          </div> -->
-        </div>
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-            <div id="showAPI" class="imgformate"></div>
-        </div>
+<div class = "container-fluid">
+  <ul class="tab-list nav nav-tabs">
+      <li class="nav-item active display" id="firstTab">
+        <a class="tab-control nav-link" href="#tab-1">Search Results</a>
+      </li>
+      <li class="nav-item" id="secondTab">
+        <a class="tab-control nav-link" href="#tab-2">Saved Recipes</a>
+      </li>
+  </ul>
+    
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-panel active" id="tab-1">
         
-        <div class="col-md-6">
-            <div id="showVide" class="imgformate">
-                <div class="row row-0"></div>
-                <div class="row row-1"></div>
-                <div class="row row-2"></div>
-                <div class="row row-3"></div>
-                <div class="row row-4"></div>
-             </div>
-        </div>
 
-
-      </div>
-
+            <div class="container extend">
+              <div class="row">
+                <div class="col-md-6 display">
+                  <h3>Recipe Results:</h3>
+                </div>
+        
+                <div class="col-md-1"></div>
+                <div class="col-md-5 display">
+                  <h3>Related Videos:</h3>
+                </div>
+              </div>
+        
+        
+              <div class="row forSpace">
+                <div class="col-md-6">
+                  <div id="showAPI" class="imgformate"></div>
+                </div>
+        
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                  <div id="showVide" class="imgformate">
+                    <div class="row row-0"></div>
+                    <div class="row row-1"></div>
+                    <div class="row row-2"></div>
+                    <div class="row row-3"></div>
+                    <div class="row row-4"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        
     </div>
-
-  </section>
-
+    <div class="tab-panel" id="tab-2">
+        <p id="pTag">you have not saved any good recipes.</p>
+	<img class="cloudzoom noShow roundImg" src="https://media.tenor.com/images/47c96510a8575987a94dfcda0dde4b6a/tenor.gif"
+  data-cloudzoom = "zoomImage: 'https://media.tenor.com/images/47c96510a8575987a94dfcda0dde4b6a/tenor.gif'" />
+        <div class="container extend2">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="saveTable" class="imgformate">
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+  </div>  
+</div>
 
   <!-- END section -->
-<!--
+
   <section class="feature-destination">
     <div class="container">
       <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h2>Local Food Recipes</h2>
+          <p>Explore the best food in the World.</p>
+          <br>
+        </div>
+        <div class="col-md-4"></div>
+
+      </div>
+      <div class="row">
         <div class="col-md-4 element-animate ">
-          <a href="#" class="img-bg" style="background-image: url('https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg')">
+          <a href="https://www.bbcgoodfood.com/recipes/sticky-chinese-chicken-traybake" class="img-bg" style="background-image: url('https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg')">
             <div class="text">
               <span class="icon ion-ios-location"></span>
-              <h2>Sticky Chinese Chicken, China</h2>
+              <h2>Sticky Chinese chicken traybake, China</h2>
               <p>Visit The Website</p>
             </div>
           </a>
         </div>
         <div class="col-md-4 element-animate ">
-          <a href="#" class="img-bg" style="background-image: url('http://cheeseburgerbobbys.com/wp-content/uploads/Our-Menu-Burger1.jpg')">
+          <a href="https://www.bbcgoodfood.com/recipes/1135659/cheeseburgers" class="img-bg" style="background-image: url('http://cheeseburgerbobbys.com/wp-content/uploads/Our-Menu-Burger1.jpg')">
             <div class="text">
               <span class="icon ion-ios-location"></span>
               <h2>CheeseBurger, USA</h2>
@@ -126,10 +165,10 @@
           </a>
         </div>
         <div class="col-md-4 element-animate ">
-          <a href="#" class="img-bg last" style="background-image: url('https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/kfms-beef-bibimbap-sml.jpg')">
+          <a href="https://www.bbcgoodfood.com/recipes/cheats-bibimbap" class="img-bg last" style="background-image: url('https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/kfms-beef-bibimbap-sml.jpg')">
             <div class="text">
               <span class="icon ion-ios-location"></span>
-              <h2>Bibimbap,Korean </h2>
+              <h2>Easy bibimbap,Korean </h2>
               <p>Visit This Website</p>
             </div>
           </a>
@@ -137,10 +176,8 @@
       </div>
     </div>
   </section>
--->
-  <!-- END section -->
 
-<!--
+  <!-- END section -->
 
   <section class="site-section">
     <div class="container">
@@ -153,42 +190,48 @@
       <div class="row top-destination">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/3228/chilli-con-carne" class="place">
-            <img src="images/Chilli_con_carne.jpg" alt="Image placeholder">
+            <img src="images/Chilli_con_carne.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Chilli_con_carne.jpg'">
             <h2>Chilli con carne recipe</h2>
             <p>Visit This Website</p>
           </a>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/2089/spiced-carrot-and-lentil-soup" class="place">
-            <img src="images/Spiced_carrot_and_lentil_soip.jpg" alt="Image placeholder">
+            <img src="images/Spiced_carrot_and_lentil_soip.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Spiced_carrot_and_lentil_soip.jpg'">
             <h2>Spiced carrot and lentil soup</h2>
             <p>Visit This Website</p>
           </a>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/4814/mustardstuffed-chicken" class="place">
-            <img src="images/Mustard-stuffed-chicken.jpg" alt="Image placeholder">
+            <img src="images/Mustard-stuffed-chicken.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Mustard-stuffed-chicken.jpg'">
             <h2>Mustard-stuffed chicken</h2>
             <p>Visit This Websit</p>
           </a>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/5605/falafel-burgers" class="place">
-            <img src="images/Falafel-burgers.jpg" alt="Image placeholder">
+            <img src="images/Falafel-burgers.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Falafel-burgers.jpg'">
             <h2>Falafel burgers</h2>
             <p>Visit This Website</p>
           </a>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/9100/onepot-chicken-chasseur" class="place">
-            <img src="images/One-pot-chicken-chasseur.jpg" alt="Image placeholder">
+            <img src="images/One-pot-chicken-chasseur.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/One-pot-chicken-chasseur.jpg'">
             <h2>One-pot chicken chasseur</h2>
             <p>Visit This Website</p>
           </a>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
           <a href="https://www.bbcgoodfood.com/recipes/1521/summerinwinter-chicken" class="place">
-            <img src="images/Summer-in-winter-chicken.jpg" alt="Image placeholder">
+            <img src="images/Summer-in-winter-chicken.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Summer-in-winter-chicken.jpg'">
             <h2>Summer-in-winter chicken</h2>
             <p>Visit This Website</p>
           </a>
@@ -197,32 +240,29 @@
     </div>
   </section>
 
-  -->
+
   <!-- END section -->
-<!--
+
   <footer class="site-footer">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <h3 class="mb-4">About</h3>
           <p class="mb-4">Learn More How to Cook!</p>
-        </div>
+        </div> -->
         <div class="col-md-2">
           <h3 class="mb-4">Links</h3>
           <ul class="list-unstyled ">
             <li>
-              <a href="#">About</a>
+              <a href="about.html">About</a>
             </li>
             <li>
-              <a href="#">Destination</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
+              <a href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
         <div class="col-md-4">
-          <h3>Connect</h3>
+          <!-- <h3>Connect</h3> -->
           <p>
             <a href="#" class="p-2">
               <span class="fa fa-facebook"></span>
@@ -238,7 +278,7 @@
       </div>
     </div>
   </footer>
-  -->
+
   <!-- END footer -->
 
   <!-- loader -->
@@ -249,15 +289,26 @@
     </svg>
   </div>
 
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <!-- Include Cloud Zoom script. -->
+  <script type="text/javascript" src="js/cloudzoom.js"></script>
+
+  <!-- Call quick start function. -->
+  <script type="text/javascript">CloudZoom.quickStart();</script>
+
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.0.js"></script>
-  <script src="js/popper.min.js"></script>
+  <!-- <script src="js/popper.min.js"></script> -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.stellar.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/voca/1.4.0/voca.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/voca/1.4.0/voca.js"></script>
   <script src="js/main.js"></script>
   <script src="js/newApp.js"></script>
 </body>
