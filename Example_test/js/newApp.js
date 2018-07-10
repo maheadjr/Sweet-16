@@ -7,6 +7,7 @@ var dHeight;
 var clickToplus=false;
 var clickToMinus=false;
 
+
 var saveHeightFromP= JSON.parse(localStorage.getItem("saveHeight"));
 if(saveHeightFromP > 400){
     console.log("more than 400");
@@ -256,7 +257,7 @@ $("#submit").on("click", function (event) {
                 id: "img" + i,
                 height: "200",
                 width: "350",
-                class: "cloudzoom imgFood",
+                class: "cloudzoom imgFood roundImg",
                 "data-cloudzoom":"zoomImage: '"+response.recipes[i].image_url+"'"
             });
 
@@ -275,6 +276,7 @@ $("#submit").on("click", function (event) {
             var newInput = $("<input>");
 
             newInput.attr({
+                id:"savedFor"+i,
                 type:"submit",
                 class:"savefor",
                 name:"food",
@@ -399,4 +401,31 @@ $('.tab-list').each(function(){
         $("#secondTab").addClass("active");
         $("#tab-2").addClass("active");
       });
+});
+
+
+
+$(document).on("click" , '#savedFor0', function(event){
+    event.preventDefault();
+      $("#savedFor0").addClass("display");
+});
+$(document).on("click" , '#savedFor1', function(event){
+    event.preventDefault();
+    $("#savedFor1").addClass("display");
+
+});
+$(document).on("click" , '#savedFor2', function(event){
+    event.preventDefault();
+    $("#savedFor2").addClass("display");
+
+});
+$(document).on("click" , '#savedFor3', function(event){
+    event.preventDefault();
+    $("#savedFor3").addClass("display");
+
+});
+$(document).on("click" , '#savedFor4', function(event){
+    event.preventDefault();
+    $("#savedFor4").addClass("display");
+
 });
