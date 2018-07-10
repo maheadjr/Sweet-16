@@ -20,7 +20,7 @@ $("#submit").on("click", function (event) {
     input = $("#userInput").val().trim();
     // console.log(input);
 
-   
+   // creates json data form API
 
     var query2 = "https://cors-anywhere.herokuapp.com/http://food2fork.com/api/search?key=9e19b48478f4603393892c6669180774&q=" + input + "&count=5&sort=r";
     $.ajax({
@@ -31,18 +31,25 @@ $("#submit").on("click", function (event) {
         response = JSON.parse(response);
 
         console.log(response);
-
+//post images from son data to website
         for (var i = 0; i < 5; i++) {
             // $("#showAPI").text(response.recipes[i].title);
             console.log(i);
+            var newCheckbox =$("<input>");
+            newCheckbox.attr({
+                type:"checkbox",
+                name:"recipe",
+                value:JSON.stringify(response.recipes[i])
+            })
+//<input type="checkbox" name="vehicle" value="Bike">
             var newImg = $("<img>");
             newImg.attr({
                 src: response.recipes[i].image_url,
                 id: "img" + i,
                 height: "200",
                 width: "350",
-            });
-
+            }).text(response.recipes[i].title);
+//turns recipe name in to a hyperlink to go directly to the recipe page
             // console.log(response.recipes[i].image_url);
             var newAnchor = $("<a>");
             console.log("new anchor made");
@@ -54,13 +61,15 @@ $("#submit").on("click", function (event) {
             console.log("attributes added");
 
             var newDiv = $("<div>");
+           
             newDiv.attr({
+
                 dataname: response.recipes[i].title,
                 id: "recipes" + i,
                 class: "recipeName",
             }).append(newAnchor);
 
-            $("#showAPI").append(newDiv, newImg);
+            $("#showAPI").append(newCheckbox,newDiv, newImg);
 
 
              test = $("#recipes"+i).attr("dataname");
