@@ -1,64 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sweet 16 App</title>
+  <title>Recipe Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--Link Stylesheets-->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <!-- Include Cloud Zoom CSS. -->
+  <link rel="stylesheet" type="text/css" href="assets/css/cloudzoom.css">
+
+  <link rel="stylesheet" href="assets/css/animate.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!--JUMBOTRON-->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Sweet-16 Project</h1>
-          <p class="lead">A search tool to help you decide what to cook with your leftover groceries.</p>
-        </div>
-    </div>
 
-    <!--Main Body-->
+  <header role="banner">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Food Recipes Search</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/Wallpapers_1920x1200.jpg);width: 100%; height: 100%;">
     <div class="container">
-        <!--Search Bar Row-->
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="input-group mb-3">
-                        <input id="userInput" type="text" class="form-control" placeholder="Milk, eggs, chicken, tomato" aria-label="ingredients" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                          <button id="searchButton" class="btn btn-outline-secondary" type="button">Search!</button>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-md-3"></div>
+      <div class="row align-items-center site-hero-inner justify-content-center">
+        <div class="col-md-8 text-center">
+
+          <div class="mb-5 element-animate">
+            <h1>Reduce Your Food Waste.</h1>
+            <p>Search for recipes that use the ingredients you already have on hand.</p>
+          </div>
+
+          <form class="form-inline element-animate" id="search-form">
+            <label for="s" class="sr-only">Location</label>
+            <input type="text" class="form-control form-control-block search-input" id="userInput" placeholder="chicken, cheese, tomato, etc.">
+            <button type="submit" class="btn btn-primary" id="submit">Search</button>
+          </form>
+
         </div>
-
-        <hr/>
-
-        <!--Results Div-->
-        <div id="searchResults"></div>
-
-
-
-
-
+      </div>
     </div>
+  </section>
+  <!-- END section -->
+  
+  <div class="container">
+    <br>
+    <br>
+    <br>
+  </div>
+
+<div class = "container-fluid">
+  <ul class="tab-list nav nav-tabs">
+      <li class="nav-item active display" id="firstTab">
+        <a class="tab-control nav-link" href="#tab-1">Search Results</a>
+      </li>
+      <li class="nav-item" id="secondTab">
+        <a class="tab-control nav-link" href="#tab-2">Saved Recipes</a>
+      </li>
+  </ul>
+    
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-panel active" id="tab-1">
+        
+
+            <div class="container extend">
+              <div class="row">
+                <div class="col-md-6 display">
+                  <h3>Recipe Results:</h3>
+                </div>
+        
+                <div class="col-md-1"></div>
+                <div class="col-md-5 display">
+                  <h3>Related Videos:</h3>
+                </div>
+              </div>
+        
+        
+              <div class="row forSpace">
+                <div class="col-md-6">
+                  <div id="showAPI" class="imgformate"></div>
+                </div>
+        
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                  <div id="showVide" class="imgformate">
+                    <div class="row row-0"></div>
+                    <div class="row row-1"></div>
+                    <div class="row row-2"></div>
+                    <div class="row row-3"></div>
+                    <div class="row row-4"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        
+    </div>
+    <div class="tab-panel" id="tab-2">
+        <p id="pTag">You haven't saved any recipes yet!</p>
+	<img class="cloudzoom noShow roundImg" src="https://media.tenor.com/images/47c96510a8575987a94dfcda0dde4b6a/tenor.gif"
+  data-cloudzoom = "zoomImage: 'https://media.tenor.com/images/47c96510a8575987a94dfcda0dde4b6a/tenor.gif'" />
+        <div class="container extend2">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="saveTable" class="imgformate">
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+  </div>  
+</div>
+
+  <!-- END section -->
+
+  <section class="feature-destination">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h2>Local Food Recipes</h2>
+          <p>Explore staples from around the World.</p>
+          <br>
+        </div>
+        <div class="col-md-4"></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-4 element-animate ">
+          <a href="https://www.bbcgoodfood.com/recipes/sticky-chinese-chicken-traybake" class="img-bg" style="background-image: url('https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>Sticky Chinese Chicken Traybake, China</h2>
+              <p>Visit The Website</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 element-animate ">
+          <a href="https://www.bbcgoodfood.com/recipes/1135659/cheeseburgers" class="img-bg" style="background-image: url('http://cheeseburgerbobbys.com/wp-content/uploads/Our-Menu-Burger1.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>CheeseBurger, USA</h2>
+              <p>Visit This Website</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 element-animate ">
+          <a href="https://www.bbcgoodfood.com/recipes/cheats-bibimbap" class="img-bg last" style="background-image: url('https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/kfms-beef-bibimbap-sml.jpg')">
+            <div class="text">
+              <span class="icon ion-ios-location"></span>
+              <h2>Easy Bibimbap, Korea </h2>
+              <p>Visit This Website</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END section -->
+
+  <section class="site-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <h2>Top Food Recipes</h2>
+          <p>Let us make something good at home.</p>
+        </div>
+      </div>
+      <div class="row top-destination">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/3228/chilli-con-carne" class="place">
+            <img src="assets/images/Chilli_con_carne.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Chilli_con_carne.jpg'">
+            <h2>Chilli con Carne Recipe</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/2089/spiced-carrot-and-lentil-soup" class="place">
+            <img src="assets/images/Spiced_carrot_and_lentil_soip.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Spiced_carrot_and_lentil_soip.jpg'">
+            <h2>Spiced Carrot and Lentil Soup</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/4814/mustardstuffed-chicken" class="place">
+            <img src="assets/images/Mustard-stuffed-chicken.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Mustard-stuffed-chicken.jpg'">
+            <h2>Mustard-Stuffed Chicken</h2>
+            <p>Visit This Websit</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/5605/falafel-burgers" class="place">
+            <img src="assets/images/Falafel-burgers.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Falafel-burgers.jpg'">
+            <h2>Falafel Burgers</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/9100/onepot-chicken-chasseur" class="place">
+            <img src="assets/images/One-pot-chicken-chasseur.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/One-pot-chicken-chasseur.jpg'">
+            <h2>One-pot Chicken Chasseur</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+          <a href="https://www.bbcgoodfood.com/recipes/1521/summerinwinter-chicken" class="place">
+            <img src="assets/images/Summer-in-winter-chicken.jpg" alt="Image placeholder" class="reSize cloudzoom"
+            data-cloudzoom = "zoomImage: 'images/Summer-in-winter-chicken.jpg'">
+            <h2>Summer-in-Winter Chicken</h2>
+            <p>Visit This Website</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
+  <!-- END section -->
 
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row mb-5">
+        <!-- <div class="col-md-4">
+          <h3 class="mb-4">About</h3>
+          <p class="mb-4">Learn More How to Cook!</p>
+        </div> -->
+        <div class="col-md-2">
+          <h3 class="mb-4">Links</h3>
+          <ul class="list-unstyled ">
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <!-- <h3>Connect</h3> -->
+          <p>
+            <a href="#" class="p-2">
+              <span class="fa fa-facebook"></span>
+            </a>
+            <a href="#" class="p-2">
+              <span class="fa fa-twitter"></span>
+            </a>
+            <a href="#" class="p-2">
+              <span class="fa fa-instagram"></span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <!-- END footer -->
 
+  <!-- loader -->
+  <div id="loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" />
+    </svg>
+  </div>
 
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
+  <!-- Include Cloud Zoom script. -->
+  <script type="text/javascript" src="assets/js/cloudzoom.js"></script>
 
+  <!-- Call quick start function. -->
+  <script type="text/javascript">CloudZoom.quickStart();</script>
 
-    <!--Link Javascript and JQUERY-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/jquery-migrate-3.0.0.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/voca/1.4.0/voca.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/newApp.js"></script>
 </body>
 
 </html>
