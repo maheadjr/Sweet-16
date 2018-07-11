@@ -1,4 +1,4 @@
-# group-16
+# Group-16: Recipe Search
 
 As a group, we wanted to address the problem of Food Waste in the US. We created an app that let's users search for recipes using the ingredients they already have on hand in order to help relieve this problem. 
 
